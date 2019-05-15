@@ -2,6 +2,7 @@ package com.jake.app.jframework.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +17,7 @@ import me.yokeyword.fragmentation.anim.FragmentAnimator;
  * @version 1.0
  * @date 19-5-15
  */
-public class BaseActivity extends AppCompatActivity implements ISupportActivity {
+public class BaseActivity extends FragmentActivity implements ISupportActivity {
 
     private final SupportActivityDelegate mSupportActivityDelegate = new SupportActivityDelegate(this);
     

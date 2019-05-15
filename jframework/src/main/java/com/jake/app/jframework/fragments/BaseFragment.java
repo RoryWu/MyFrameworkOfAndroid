@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jake.app.jframework.activities.BaseActivity;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.ExtraTransaction;
@@ -19,7 +21,7 @@ import me.yokeyword.fragmentation.SupportFragmentDelegate;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 /**
- * @author
+ * @author Jake
  * @version 1.0
  * @date 19-5-15
  */
@@ -79,13 +81,23 @@ public abstract class BaseFragment extends Fragment implements ISupportFragment 
             throw new ClassCastException("type of setLayout() must be int or View");
         } 
         
-        /** 添加butterKnife 的绑定 **/
+        // 添加butterKnife 的绑定
         mUnbinder = ButterKnife.bind(rootView);
+        onBindView(savedInstanceState , rootView);
         
         return rootView;
     }
 
+    /**
+     * 在子类中绑定各个View 的ID
+     */
+    protected abstract void onBindView(Bundle savedInstanceState, View rootView);
+
     protected abstract Object setLayout() ;
+
+    public final BaseActivity getBaseActivity() {
+        return (BaseActivity) mFragmentActivity;
+    }
 
     @Override
     public SupportFragmentDelegate getSupportDelegate() {
@@ -104,66 +116,66 @@ public abstract class BaseFragment extends Fragment implements ISupportFragment 
 
     @Override
     public void onEnterAnimationEnd(@Nullable Bundle savedInstanceState) {
-
+        mSupportFragmentDelegate.onEnterAnimationEnd(savedInstanceState);
     }
 
     @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
-
+        mSupportFragmentDelegate.onLazyInitView(savedInstanceState);
     }
 
     @Override
     public void onSupportVisible() {
-
+        mSupportFragmentDelegate.onSupportInvisible();
     }
 
     @Override
     public void onSupportInvisible() {
-
+        mSupportFragmentDelegate.onSupportInvisible();
     }
 
     @Override
     public boolean isSupportVisible() {
-        return false;
+        return mSupportFragmentDelegate.isSupportVisible();
     }
 
     @Override
     public FragmentAnimator onCreateFragmentAnimator() {
-        return null;
+        return mSupportFragmentDelegate.onCreateFragmentAnimator();
     }
 
     @Override
     public FragmentAnimator getFragmentAnimator() {
-        return null;
+        return mSupportFragmentDelegate.getFragmentAnimator();
     }
-
+    
     @Override
     public void setFragmentAnimator(FragmentAnimator fragmentAnimator) {
-
+        mSupportFragmentDelegate.setFragmentAnimator(fragmentAnimator);
     }
 
     @Override
     public void setFragmentResult(int resultCode, Bundle bundle) {
-
+        mSupportFragmentDelegate.setFragmentResult(resultCode, bundle);
     }
 
     @Override
     public void onFragmentResult(int requestCode, int resultCode, Bundle data) {
-
+        mSupportFragmentDelegate.onFragmentResult(requestCode, resultCode, data);
     }
 
     @Override
     public void onNewBundle(Bundle args) {
-
+        mSupportFragmentDelegate.onNewBundle(args);
     }
 
     @Override
     public void putNewBundle(Bundle newBundle) {
-
+        mSupportFragmentDelegate.putNewBundle(newBundle);
     }
 
     @Override
     public boolean onBackPressedSupport() {
-        return false;
+        return mSupportFragmentDelegate.onBackPressedSupport();
     }
 }
