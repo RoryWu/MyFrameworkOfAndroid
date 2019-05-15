@@ -1,0 +1,1 @@
+include ':app', ':thirdpartlib', ':commonlib', ':uilib', ':learnkotlin', ':jalgorithm', ':jframework'

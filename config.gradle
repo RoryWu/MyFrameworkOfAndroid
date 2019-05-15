@@ -1,0 +1,53 @@
+
+// 版本号管理
+ext {
+
+    // ---------------------------------- framework start
+
+    // android sdk
+    androidSdk = [
+            compileSdkVersion: 26,
+            minSdkVersion    : 16,
+            targetSdkVersion : 26
+    ]
+
+    // app
+    app = [
+            versionCode: 2,
+            versionName: "1.0.2",
+            multidex   : "1.0.2"
+    ]
+
+    // ui
+    ui = [
+            versionCode              : 100,
+            versionName              : "1.0.0",
+            appcompatVersion         : "26.1.0",
+            recyclerViewVersion      : "26.1.0",
+            cardViewVersion          : "26.1.0",
+            ViewPagerIndicatorVersion: "2.4.1",
+            lottieVersion            : "2.0.0",
+            androidannotationsVersion: "4.3.1",
+            zxingVersion             : "3.3.0",
+            circleimageviewVersion   : "2.2.0",
+            nativeStackBlurVersion   : "1.0.2",
+            exoplayerVersion         : "2.5.0"
+    ]
+
+    //base
+    base = [
+            versionCode    : 100,
+            versionName    : "1.0.0",
+            greenDaoVersion: "3.2.2",
+            okHttp3Version : "3.10.0",
+            glideVersion   : "3.7.0",
+            jodaTimeVersion: "1.6.2",
+            gsonVersion    : "2.8.1",
+            jsoupVersion   : "1.11.1",
+            photoView      : "1.4.1",
+            umengCommonVersion    :"1.5.3",
+            umnegAnalyticsVersion :"7.5.3"
+    ]
+    
+    // ---------------------------------- framework end
+}
