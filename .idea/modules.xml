@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Japplication/Japplication.iml" filepath="$PROJECT_DIR$/Japplication/Japplication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyFramework.iml" filepath="$PROJECT_DIR$/MyFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commonlib/commonlib.iml" filepath="$PROJECT_DIR$/commonlib/commonlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javabase/javabase.iml" filepath="$PROJECT_DIR$/javabase/javabase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jframework/jframework.iml" filepath="$PROJECT_DIR$/jframework/jframework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/learnkotlin/learnkotlin.iml" filepath="$PROJECT_DIR$/learnkotlin/learnkotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thirdpartlib/thirdpartlib.iml" filepath="$PROJECT_DIR$/thirdpartlib/thirdpartlib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uilib/uilib.iml" filepath="$PROJECT_DIR$/uilib/uilib.iml" />
+    </modules>
+  </component>
+</project>

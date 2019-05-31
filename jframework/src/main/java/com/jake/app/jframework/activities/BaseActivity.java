@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.FragmentActivity;
 
+import com.jake.app.jframework.R;
 import com.jake.app.jframework.fragments.JFragment;
 
 import androidx.annotation.Nullable;
@@ -35,7 +36,11 @@ public abstract class BaseActivity extends FragmentActivity implements ISupportA
 
     private void initContainer(Bundle savedInstanceState) {
         ConstraintLayout constraintLayout = new ConstraintLayout(this);
-        
+        constraintLayout.setId(R.id.delegate_id);
+        setContentView(constraintLayout);
+        if (savedInstanceState == null) {
+            mSupportActivityDelegate.loadRootFragment(R.id.delegate_id , setRootFragment());
+        }
     }
 
     @Override

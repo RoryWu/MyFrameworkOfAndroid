@@ -2,9 +2,9 @@ package com.jake.app.jframework.fragments;
 
 import android.Manifest;
 import android.content.Intent;
-import android.support.annotation.NonNull;
 
-import com.jake.app.jframework.ui.CameraToolClass;
+import com.jake.app.jframework.ui.RequestCodes;
+import com.jake.app.jframework.ui.camera.CameraToolClass;
 
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.RuntimePermissions;
@@ -20,6 +20,22 @@ public abstract class PermissionCheckFragment extends BaseFragment {
     @NeedsPermission(Manifest.permission.CAMERA)
     void startCamera() {
         CameraToolClass.start(this);
+    }
+
+    //扫描二维码(不直接调用)
+    @NeedsPermission(Manifest.permission.CAMERA)
+    void startScan(BaseFragment delegate) {
+        delegate.getSupportDelegate().startForResult(new ScannerFragment(), RequestCodes.SCAN);
+    }
+    
+    
+
+    public void startCameraWithCheck(){
+        PermissionCheckFragmentPermissionsDispatcher.startCameraWithCheck(this);
+    }
+
+    public void startScanWithCheck(){
+        PermissionCheckFragmentPermissionsDispatcher.startScanWithCheck(this);
     }
 
 

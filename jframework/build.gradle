@@ -3,17 +3,11 @@ apply from: rootProject.file('config.gradle')
 
 android {
     compileSdkVersion 28
-
-
-
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -53,5 +47,7 @@ dependencies {
     implementation 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2'
     // blankj 工具包
     implementation 'com.blankj:utilcode:1.23.2'
+    //二维码扫描
+    implementation 'me.dm7.barcodescanner:zbar:1.9.3'
 
 }

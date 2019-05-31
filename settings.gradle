@@ -1,1 +1,1 @@
-include ':app', ':thirdpartlib', ':commonlib', ':uilib', ':learnkotlin', ':jalgorithm', ':jframework'
+include /*':app',*/ ':thirdpartlib', ':commonlib', ':uilib', ':learnkotlin', ':Japplication', /*':jalgorithm',*/ ':jframework', ':javabase'
