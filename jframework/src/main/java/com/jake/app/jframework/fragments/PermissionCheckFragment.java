@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import com.jake.app.jframework.ui.RequestCodes;
 import com.jake.app.jframework.ui.camera.CameraToolClass;
+import com.jake.app.jframework.ui.scaner.ScannerFragment;
 
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.RuntimePermissions;
@@ -28,14 +29,13 @@ public abstract class PermissionCheckFragment extends BaseFragment {
         delegate.getSupportDelegate().startForResult(new ScannerFragment(), RequestCodes.SCAN);
     }
     
-    
 
     public void startCameraWithCheck(){
         PermissionCheckFragmentPermissionsDispatcher.startCameraWithCheck(this);
     }
 
-    public void startScanWithCheck(){
-        PermissionCheckFragmentPermissionsDispatcher.startScanWithCheck(this);
+    public void startScanWithCheck(BaseFragment baseFragment){
+        PermissionCheckFragmentPermissionsDispatcher.startScanWithCheck(this , baseFragment);
     }
 
 

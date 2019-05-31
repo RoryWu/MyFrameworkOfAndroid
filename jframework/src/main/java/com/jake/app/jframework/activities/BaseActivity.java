@@ -9,7 +9,6 @@ import com.jake.app.jframework.R;
 import com.jake.app.jframework.fragments.JFragment;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import me.yokeyword.fragmentation.ExtraTransaction;
 import me.yokeyword.fragmentation.ISupportActivity;
 import me.yokeyword.fragmentation.SupportActivityDelegate;
