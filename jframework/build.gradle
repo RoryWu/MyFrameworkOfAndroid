@@ -43,5 +43,15 @@ dependencies {
     //ButterKnife依赖
     api 'com.jakewharton:butterknife:8.6.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+    //动态权限处理
+    api 'com.github.hotchemi:permissionsdispatcher:2.4.0'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.4.0'
+    //Log
+    api 'com.orhanobut:logger:2.1.1'
+    //字体图标
+    implementation 'com.joanzapata.iconify:android-iconify-ionicons:2.2.2'
+    implementation 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2'
+    // blankj 工具包
+    implementation 'com.blankj:utilcode:1.23.2'
 
 }

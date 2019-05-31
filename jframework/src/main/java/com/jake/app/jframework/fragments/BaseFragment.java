@@ -79,12 +79,12 @@ public abstract class BaseFragment extends Fragment implements ISupportFragment 
             rootView = (View) setLayout();
         } else {
             throw new ClassCastException("type of setLayout() must be int or View");
-        } 
-        
+        }
+
         // 添加butterKnife 的绑定
         mUnbinder = ButterKnife.bind(rootView);
-        onBindView(savedInstanceState , rootView);
-        
+        onBindView(savedInstanceState, rootView);
+
         return rootView;
     }
 
@@ -93,7 +93,7 @@ public abstract class BaseFragment extends Fragment implements ISupportFragment 
      */
     protected abstract void onBindView(Bundle savedInstanceState, View rootView);
 
-    protected abstract Object setLayout() ;
+    protected abstract Object setLayout();
 
     public final BaseActivity getBaseActivity() {
         return (BaseActivity) mFragmentActivity;
@@ -106,12 +106,12 @@ public abstract class BaseFragment extends Fragment implements ISupportFragment 
 
     @Override
     public ExtraTransaction extraTransaction() {
-        return null;
+        return mSupportFragmentDelegate.extraTransaction();
     }
 
     @Override
     public void enqueueAction(Runnable runnable) {
-
+        mSupportFragmentDelegate.enqueueAction(runnable);
     }
 
     @Override
@@ -148,7 +148,7 @@ public abstract class BaseFragment extends Fragment implements ISupportFragment 
     public FragmentAnimator getFragmentAnimator() {
         return mSupportFragmentDelegate.getFragmentAnimator();
     }
-    
+
     @Override
     public void setFragmentAnimator(FragmentAnimator fragmentAnimator) {
         mSupportFragmentDelegate.setFragmentAnimator(fragmentAnimator);
